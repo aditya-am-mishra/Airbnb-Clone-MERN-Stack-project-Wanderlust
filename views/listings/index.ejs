@@ -1,0 +1,138 @@
+<% layout("/layouts/boilerplate") -%>
+ <style>
+  #filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .filter {
+    text-align: center;
+    margin-right: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    opacity: 0.7;
+  }
+  .filter:hover {
+    opacity: 1;
+  }
+  .tax-info {
+    display: none;
+  }
+  .tax-toggle {
+    border: 1px solid black !important;
+    border-radius: 1rem;
+    height: 3.5rem;
+    padding: 2rem;
+    margin-left: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* These ensure centering */
+  }
+  .tax-toggle .form-switch {
+    
+    size:2rem/* optional spacing between label and switch */
+  }
+  .tax-toggle .form-check-label {
+    margin: 0;
+    font-size: 1rem;
+    /* optional: adjust font size or style */
+  }
+
+</style>
+
+<div id="filters">
+  <div class="filter">
+    <i class="fa-solid fa-fire"></i>
+    <p>Trending</p>
+  </div>
+  <div class="filter">
+    <i class="fa-solid fa-bed"></i>
+    <p>Rooms</p>
+  </div>
+  <div class="filter">
+    <i class="fa-solid fa-mountain-city"></i>
+    <p>Cities</p>
+  </div>
+  <div class="filter">
+    <i class="fa-solid fa-mountain"></i>
+    <p>Mountain</p>
+  </div>
+  <div class="filter">
+    <i class="fa-solid fa-person-swimming"></i>
+    <p>pool view</p>
+  </div>
+  <div class="filter">
+    <i class="fa-solid fa-campground"></i>
+    <p>Camping</p>
+  </div>
+  <div class="filter">
+    <i class="fa-solid fa-cow"></i>
+    <p>farmhouses</p>
+  </div>
+  <div class="filter">
+    <i class="fa-solid fa-snowflake"></i>
+    <p>Snowfall</p>
+  </div>
+  <div class="filter">
+    <i class="fa-solid fa-umbrella"></i>
+    <p>valleys</p>
+    
+  </div>
+  <div class="tax-toggle">
+    <div class="form-check-reverse form-switch">
+      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+      <label class="form-check-label" for="flexSwitchCheckDefault">Display total after taxes</label>
+    </div>
+  </div>
+</div>
+
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+  <% for (let listing of allListings) { %>
+    <div class="col mb-4">
+      <a
+        href="/listings/<%= listing._id %>"
+        class="listing-link"
+        style="text-decoration: none; color: inherit"
+      >
+        <div class="card position-relative border-0">
+          <div class="card-img-container listing-card">
+            <img
+              src="<%= listing.image.url %>"
+              class="card-img-top"
+              alt="listing_image"
+              style="height: 20rem; object-fit: cover"
+            />
+            <div class="card-img-overlay card-hover-overlay"></div>
+          </div>
+          <div class="card-body">
+            <p class="card-text mb-0">
+              <b><%= listing.title %></b><br />
+              <% if (listing.price != null) { %>
+                &#8377;<%= listing.price.toLocaleString("en-IN") %> /night
+                <i class="tax-info"> +5% GST</i><br>
+              <% } else { %>
+                Price unavailable<br />
+              <% } %>
+            </p>
+          </div>
+        </div>
+      </a>
+    </div>
+  <% } %>
+</div>
+
+<script>
+  // Fixed: should match the switch's ID
+  let taxSwitch = document.getElementById("flexSwitchCheckDefault");
+  taxSwitch.addEventListener("click", () => {
+    let taxInfo = document.getElementsByClassName("tax-info");
+    for (let info of taxInfo) {
+      if (info.style.display !== "inline") {
+        info.style.display = "inline";
+      } else {
+        info.style.display = "none";
+      }
+    }
+  });
+</script>
