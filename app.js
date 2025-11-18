@@ -87,6 +87,21 @@ app.get("/demouser", async (req, res) => {
   res.send(registeredUser);
 });
 
+// Redirect root to /listings
+app.get("/", (req, res) => {
+  res.redirect("/listings");
+});
+
+// Mount routers
+app.use("/", userRouter);
+app.use("/listings", listingRouter);
+app.use("/listings/:id/reviews", reviewRouter);
+
+// 404 handler
+app.use((req, res, next) => {
+  next(new ExpressError(404, "Page not found!"));
+});
+
 // Mount routers BEFORE the 404 handler!
 app.use("/", userRouter);
 app.use("/listings", listingRouter);
