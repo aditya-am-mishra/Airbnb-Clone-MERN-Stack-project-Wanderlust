@@ -83,6 +83,13 @@ Follow these steps to run Wanderlust locally:
 
 ## Screenshots  
 
+<img width="1917" height="823" alt="image" src="https://github.com/user-attachments/assets/bc02f817-ed01-4b41-9e4d-014206a0fdf5" />
+
+<img width="1898" height="948" alt="image" src="https://github.com/user-attachments/assets/1d84064a-0d70-4970-a089-58a532ba73fd" />
+
+<img width="1914" height="924" alt="image" src="https://github.com/user-attachments/assets/9291cdff-0910-450c-8acb-e7b06fe9bf52" />
+
+
   
 For example:  
 
