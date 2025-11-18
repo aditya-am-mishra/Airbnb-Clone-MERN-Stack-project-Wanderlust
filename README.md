@@ -1,6 +1,3 @@
-That’s great progress — finishing a full MERN stack project is a big milestone. Below is a detailed, copy-paste-ready README section for your **Wanderlust** project, written to look professional and comprehensive on GitHub. You can adjust details like your GitHub username, live link, or screenshots accordingly.  
-
-***
 
 # Wanderlust – Travel Listing & Review Platform  
 
@@ -77,23 +74,15 @@ Follow these steps to run Wanderlust locally:
    SESSION_SECRET=your_secret_key
    ```
 
-4. **Run the server**  
-   ```
-   npm run dev
-   ```
-   The app will run at `http://localhost:3000`
-
-***
 
 ## Screenshots  
 
-(Add screenshots here to visually showcase your app.)  
+  
 For example:  
 
 - Homepage  
 - Listing Details Page  
-- Create/Edit Form  
-- Map View  
+- Create/Edit Form    
 
 ***
 
@@ -123,18 +112,11 @@ Contributions are welcome! If you’d like to improve this project:
 3. Commit your changes and push  
 4. Submit a pull request  
 
-***
-
-## License  
-
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.  
 
 ***
 
 ## Author  
 
-Developed with passion by [Aditya](https://github.com/your-github-username).  
+Developed with passion by [Aditya](https://github.com/aditya-am-mishra).  
 
 ***
-
-Would you like this README to sound more **developer-focused** (technical documentation style) or more **portfolio-friendly** (showcasing your project for recruiters and LinkedIn)?
